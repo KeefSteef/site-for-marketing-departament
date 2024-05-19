@@ -1,0 +1,8 @@
+@mixin flex-center($direction: column)
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: $direction
+
+@mixin logo-clip-path($downCorner: 30%, $upCorner: 80%)
+  clip-path: polygon(100% 0, 55% $downCorner, 55% 0, 0 $upCorner, 0 100%, 100% 100%)

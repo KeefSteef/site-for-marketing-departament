@@ -1,0 +1,157 @@
+@import "reset"
+@import "fonts"
+@import "mixins"
+@import "var"
+
+html, body
+  overflow-x: hidden
+
+h1, h2, h3, h4, h5, h6, p, a
+  font-family: "Poppins", sans-serif
+
+h1,h2,p,svg, a
+  color: white
+  fill: white
+
+.wrapper
+  @include flex-center()
+  background: $bg-color
+
+.site-logo
+  width: 100vw
+  min-height: 300px
+  max-height: 600px
+  object-fit: cover
+  object-position: top
+
+.site-title
+  display: block
+  font-size: 32px
+  text-align: center
+  font-weight: bold
+.social-media-items
+  display: flex
+  margin: 20px 0
+  gap: 12px
+  svg
+    width: 30px
+    height: 35px
+    transition: .2s
+    &:hover
+      transform: translateY(-5px)
+
+.main-header-figure
+  content: ''
+  position: absolute
+  width: 100vw
+  height: 100px
+  background: $bg-color
+  top: -99px
+  left: 0
+  @include logo-clip-path(60%)
+
+
+.university-links-list
+  display: flex
+  margin-top: 20px
+  flex-direction: column
+  gap: 18px
+
+.university-link-item a
+  width: 90vw
+  max-width: 560px
+  height: 300px
+  @include flex-center(row)
+  position: relative
+  border-radius: 10px
+  cursor: pointer
+  text-align: center
+  img
+    width: 100%
+    height: 100%
+    position: absolute
+    border-radius: inherit
+    object-fit: cover
+
+  h2
+    font-size: 18px
+    line-height: normal
+    font-weight: 700
+    letter-spacing: -.012em
+
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 5
+    border-radius: inherit
+    background: rgba(0, 0, 0, 0.5)
+    transition: .2s
+
+  .link-item-info
+    padding: 0 24px
+
+  .link-item-info, h2
+    z-index: 15
+    font-size: 18px
+
+  .link-item-info p
+    margin-top: 5px
+    font-size: 12px
+    line-height: normal
+
+  &:hover
+    &:before
+      background: rgba(0, 0, 0, 0.6)
+
+main
+  position: relative
+  width: 100%
+  background: $bg-color
+  @include flex-center()
+  &:before
+    content: ""
+    position: absolute
+    top: -130px
+    width: 100%
+    height: 100px
+
+.social-media-items
+  display: flex
+  justify-content: center
+  align-items: center
+
+footer
+  padding-bottom: 40px
+  margin-top: 50px
+  &:hover img
+    transform: rotateY(180deg)
+
+  img
+    opacity: 1
+    width: 50px
+    height: 50px
+    perspective: 50px
+    transition: .7s
+    cursor: pointer
+
+.main_content
+  z-index: 10
+  margin-top: -20px
+
+@media screen and (max-width: 1280px)
+  .main-header-figure
+    @include logo-clip-path(40%, 60%)
+
+@media screen and (max-width: 500px)
+    .university-link-item a
+      height: 220px
+    main
+      .site-logo-container:before
+        height: 160px
+    .main-header-figure
+      @include logo-clip-path(23%, 33%)
+
+    .main_content
+      margin-top: -38px
