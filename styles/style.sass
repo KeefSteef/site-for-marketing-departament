@@ -23,7 +23,7 @@ h1,h2,p,svg, a
 .site-logo
   width: 100vw
   min-height: 300px
-  max-height: 750px
+  max-height: 31vw
   object-fit: cover
   object-position: top
 
@@ -147,12 +147,15 @@ footer
   .university-links-list
     gap: 15px
 
+@media screen and (max-width: 1200px)
+  .site-logo
+    max-height: 33vw
 
 @media screen and (max-width: 980px)
   .university-link-item a
-   height: 300px
+    height: 300px
   .university-link-item a
-   width: 90vw
+    width: 90vw
 
 @media screen and (max-width: 500px)
   .university-link-item a
@@ -181,4 +184,3 @@ $test: (1: 0%, 2: 5%, 3: 20%, 4: 100%)
   .university-links-list li:nth-child(0#{$index})
     img
      object-position: 50% $top
-
